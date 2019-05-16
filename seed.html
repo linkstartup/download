@@ -136,6 +136,11 @@ $(document).ready(function () {
     dataType: "json",
     success: function success(data, status, jqXHR) {
       console.log(data.files)
+      for(let i=0;i<data.files.length;i++){
+        if(data.files[i].substr(data.files[i].lastIndexOf(".")+1).toLowerCase()=='mp4'){
+          console.log('http://18.222.89.229:8888/'+data.files[i])
+        }
+      }
     }
   })
 
