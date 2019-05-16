@@ -26,7 +26,7 @@ const hi = "hi";
 const app = express();
 
 
-const testFolder = '../torrent';
+const testFolder = '../';
 
 
 
