@@ -26,7 +26,6 @@ const hi = "hi";
 const app = express();
 
 
-const testFolder = '../';
 
 
 
@@ -48,14 +47,20 @@ app.get('/seed', (req, res) => {
 })
 
 
+const testFolder = '../';
 
 //读取文件目录
 app.post('/seed', (req, res) => {
 
     fs.readdir(testFolder, (err, files) => {
-        res.json({
-            files:files,
+        let bufferFile=files;
+        fs.readdir('../upload', (err, files) => {
+            files.forEach((file)=>{bufferFile.push(file)});
+            res.json({
+                files:bufferFile,
+            })
         })
+
     })
 
 
