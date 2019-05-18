@@ -43,9 +43,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, './seed.html'));
-// })
+app.get('/seed', (req, res) => {
+    res.sendFile(path.join(__dirname, './seed.html'));
+})
 
 
 

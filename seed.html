@@ -71,9 +71,7 @@
                 </form>
 
             </div>
-            <div class="col-lg-2">
-              <video src="http://18.222.89.229:1234/2-1.webm" controls></video>
-              <video src="http://18.222.89.229:1234/1-1-2.webm" controls></video>
+            <div class="col-lg-2" id="mao">
             </div>
         </div>
 
@@ -141,6 +139,8 @@ $(document).ready(function () {
       console.log(data.files)
       for(let i=0;i<data.files.length;i++){
         if(data.files[i].substr(data.files[i].lastIndexOf(".")+1).toLowerCase()=='mp4'){
+          let link="http://18.222.89.229:1234/"+data.files[i];
+          $('#mao').append(<video src="+link+" controls></video>)
           console.log('http://18.222.89.229:1234/'+data.files[i])
         }
       }
