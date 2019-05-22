@@ -140,7 +140,7 @@ $(document).ready(function () {
       for(let i=0;i<data.files.length;i++){
         if(data.files[i].substr(data.files[i].lastIndexOf(".")+1).toLowerCase()=='mp4'){
           let link="http://18.222.89.229:1234/"+data.files[i];
-          $('#mao').append(`<video src="${link}" controls></video>`)
+          $('#mao').append(`<video src="${link}" controls></video><div>${link}</div>`)
           console.log('http://18.222.89.229:1234/'+data.files[i])
         }
       }
